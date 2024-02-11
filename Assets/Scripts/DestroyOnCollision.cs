@@ -19,7 +19,7 @@ public class DestroyOnCollision : MonoBehaviour
             {
                 this.gameObject.GetComponent<Explode>().explodeOnImpact();
             }
-            if (targetTag == "Player")
+            if (this.tag == "Player")
             {
                 PlayerPrefs.SetInt("HighScore", Singleton.singleton.notifyGetScore());
                 SceneManager.LoadScene("HighScore");
@@ -27,6 +27,8 @@ public class DestroyOnCollision : MonoBehaviour
 
             
             Destroy(gameObject);
+
+            
 
             if (targetTag == "bullet" || targetTag == "Bullet")
             {
